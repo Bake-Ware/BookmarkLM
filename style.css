@@ -1,0 +1,60 @@
+/* Minimal custom styles - primarily for chat log height and think blocks */
+body, html {
+    height: 100%;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1rem; /* Space for potential fixed-top elements if added later */
+    padding-bottom: 1rem;
+}
+#chat-log {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid var(--bs-border-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--bs-border-radius);
+    min-height: 200px; /* Ensure it has some height */
+}
+.message { margin-bottom: 0.5rem; padding: 0.5rem; border-radius: var(--bs-border-radius); line-break: anywhere; }
+.user-message { background-color: var(--bs-primary-bg-subtle); text-align: right; margin-left: auto; max-width: 80%; }
+.assistant-message { background-color: var(--bs-success-bg-subtle); text-align: left; margin-right: auto; max-width: 80%; white-space: pre-wrap; }
+.system-message { background-color: var(--bs-secondary-bg-subtle); text-align: center; font-style: italic; font-size: 0.9em; }
+
+.think-block {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+}
+.think-summary {
+    cursor: pointer;
+    padding: 0.375rem 0.75rem;
+    font-weight: bold;
+    background-color: var(--bs-info-bg-subtle);
+    border-radius: var(--bs-border-radius);
+    list-style: none; /* Remove default disclosure triangle */
+}
+.think-summary::-webkit-details-marker { display: none; }
+.think-block[open] > .think-summary {
+    border-bottom: 1px solid var(--bs-border-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.think-content {
+    padding: 0.75rem;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: var(--bs-body-bg);
+}
+.streaming-cursor {
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}

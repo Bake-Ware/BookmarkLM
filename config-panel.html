@@ -1,0 +1,26 @@
+<!-- Configuration Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="configOffcanvas" aria-labelledby="configOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="configOffcanvasLabel">Model Configuration</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="close-config-button"></button>
+    </div>
+    <div class="offcanvas-body">
+        <button id="theme-toggle-button" class="btn btn-outline-secondary w-100 mb-3">Toggle Theme</button>
+        <hr class="my-3">
+        <div id="status-area" class="alert alert-secondary text-center p-2 mb-3">Status: Initializing...</div>
+        
+        <div class="mb-3">
+            <label for="model-select" class="form-label">Select Model:</label>
+            <select id="model-select" class="form-select">
+                <option value="">-- Please select a model --</option>
+            </select>
+        </div>
+
+        <div id="model-info-area" class="card mb-3">
+            <div class="card-body">
+                <p class="card-text">Select a model to see its details here.</p>
+            </div>
+        </div>
+        <button id="load-model-btn" class="btn btn-success w-100 mt-auto" disabled>Load Selected Model</button>
+    </div>
+</div>
